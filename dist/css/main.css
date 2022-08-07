@@ -1,3 +1,20 @@
+@keyframes rocket {
+  0% {
+    -webkit-filter: drop-shadow(50 5px 15px 0px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 5px 15px 0px rgba(0, 0, 0, 0.6));
+    transform: translatey(0px);
+  }
+  50% {
+    -webkit-filter: drop-shadow(50 5px 15px 0px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 5px 15px 0px rgba(0, 0, 0, 0.6));
+    transform: translatey(-20px);
+  }
+  100% {
+    -webkit-filter: drop-shadow(50 5px 15px 0px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 5px 15px 0px rgba(0, 0, 0, 0.6));
+    transform: translatey(0px);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +47,7 @@ a {
 .layoutMain .sideNav_layout .logo .name {
   font-weight: 700;
   font-size: 1.65em;
+  margin: 0 0.75rem;
 }
 .layoutMain .sideNav_layout .menusDiv .itemDiv {
   margin: 0.5rem;
@@ -53,6 +71,40 @@ a {
   color: #3E87F6;
   background: #fff;
 }
+.layoutMain .sideNav_layout .upgradePlanDiv {
+  position: absolute;
+  bottom: 10px;
+}
+.layoutMain .sideNav_layout .upgradePlanDiv .bgDiv {
+  background: #3E87F6;
+  padding: 2rem;
+  height: 150px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.layoutMain .sideNav_layout .upgradePlanDiv .bgDiv img {
+  position: absolute;
+  bottom: 3.85rem;
+  animation: rocket 7s ease-in-out infinite;
+}
+.layoutMain .sideNav_layout .upgradePlanDiv .bgDiv .text {
+  margin-top: 2rem;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 0.4rem;
+}
+.layoutMain .sideNav_layout .upgradePlanDiv .bgDiv button {
+  font-size: 1em;
+  font-weight: 700;
+  color: #3E87F6;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  width: 99%;
+  border: 0;
+}
 .layoutMain .contentDiv {
   margin-left: 15%;
   padding: 2rem;
@@ -66,10 +118,95 @@ a {
   justify-content: space-between;
   margin-bottom: 2.5rem;
 }
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn span::after {
+  content: attr(data-text);
+  position: absolute;
+  border-radius: 10px;
+  padding: 6px 20px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #fff;
+  user-select: none;
+  transition: transform 100ms ease-in;
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn span:active::after {
+  transform: scale(0.9);
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn .pumping::after {
+  animation: pumping 100s ease-in-out infinite;
+}
+@keyframes pumping {
+  50% {
+    transform: scale(0.95);
+  }
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn .shape {
+  --size: 8px;
+  position: absolute;
+  top: calc(50% - var(--size));
+  left: calc(50% - var(--size));
+  width: calc(var(--size) * 2);
+  height: calc(var(--size) * 2);
+  animation: popup var(--d) cubic-bezier(0.08, 0.56, 0.53, 0.98) forwards;
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn .square {
+  border-radius: 4px;
+  background-color: var(--c);
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn .circle {
+  border-radius: 50%;
+  background-color: var(--c);
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn .triangle {
+  width: 0px;
+  height: 0px;
+  background-color: none;
+  border-top: var(--size) solid transparent;
+  border-bottom: calc(var(--size) * 2) solid var(--c);
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart {
+  --size: 6px;
+  background-color: var(--c);
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart::before, .layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--c);
+  border-radius: 50%;
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart::before {
+  left: -50%;
+}
+.layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart::after {
+  top: -50%;
+}
+@keyframes popup {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) rotate(var(--r));
+  }
+}
 .layoutMain .contentDiv .headerMessageDiv .message h2 {
   color: #111111;
 }
-.layoutMain .contentDiv .headerMessageDiv .message p {
+.layoutMain .contentDiv .headerMessageDiv .message rem {
   font-size: 0.9em;
   color: #7C8DA6;
 }

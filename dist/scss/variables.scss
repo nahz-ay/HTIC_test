@@ -6,3 +6,24 @@ $theme-color:#3E87F6;
 $white:#fff;
 $bg:#E5E5E5;
 $bg2:linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
+
+
+
+
+@keyframes rocket {
+	0% {
+        -webkit-filter: drop-shadow(50 5px 15px 0px rgba(0,0,0,0.6));
+        filter: drop-shadow(0 5px 15px 0px rgba(0,0,0,0.6));
+		transform: translatey(0px);
+	}
+	50% {
+        -webkit-filter: drop-shadow(50 5px 15px 0px rgba(0,0,0,0.6));
+        filter: drop-shadow(0 5px 15px 0px rgba(0,0,0,0.6));
+        		transform: translatey(-20px);
+	}
+	100% {
+        -webkit-filter: drop-shadow(50 5px 15px 0px rgba(0, 0, 0, 0.6));
+        filter: drop-shadow(0 5px 15px 0px rgba(0,0,0,0.6));
+		transform: translatey(0px);
+	}
+}
