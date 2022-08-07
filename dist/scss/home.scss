@@ -3,6 +3,82 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none !important;
+}
+// @font-face {
+//     font-family: 'Airbnb Cereal App';
+//     src: 
+//     url('/dist/fonts/AirbnbCereal_W_Bd.otf') format('truetype');
+// }
+
 .layoutMain{
     padding: 1rem;
+    display: flex;
+   .sideNav_layout{
+    width: 15%;
+    background: $bg2;
+    height: 100vh;
+    .logo{
+        display: flex;
+        margin: 0.5rem 1rem;
+
+        img{
+            height: 36px;
+            width:36px;
+        }
+        .name{
+            font-weight: 700;
+            font-size: 1.65em;
+        }
+    }
+    .menusDiv{
+        .itemDiv{
+            margin: 0.5rem;
+            .item{
+                display: flex;
+                gap: 1rem;
+                color:$text-color;
+                font-size: 1em;
+                font-weight: 500;
+                align-items: center;
+                transition: .5s;
+                padding:0.85rem 0.75rem;
+                border-radius: 3px;
+
+                // text-decoration: none;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+                &:hover,.active{
+                    color: $blue;
+                    background: $white;
+                }
+            }
+        }
+    }
+   }
+   .contentDiv{
+    width: 60%;
+    .headerMessageDiv{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        .message{
+            h2{
+                color:$text-color;
+            }
+            p{
+                font-size: 0.9em;
+                color: $grey;
+            }
+        }
+       
+    }
+   }
+   .rightSideDiv{
+    width: 20%;
+   }
 }

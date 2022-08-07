@@ -4,8 +4,71 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .layoutMain {
   padding: 1rem;
+  display: flex;
+}
+.layoutMain .sideNav_layout {
+  width: 15%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
+  height: 100vh;
+}
+.layoutMain .sideNav_layout .logo {
+  display: flex;
+  margin: 0.5rem 1rem;
+}
+.layoutMain .sideNav_layout .logo img {
+  height: 36px;
+  width: 36px;
+}
+.layoutMain .sideNav_layout .logo .name {
+  font-weight: 700;
+  font-size: 1.65em;
+}
+.layoutMain .sideNav_layout .menusDiv .itemDiv {
+  margin: 0.5rem;
+}
+.layoutMain .sideNav_layout .menusDiv .itemDiv .item {
+  display: flex;
+  gap: 1rem;
+  color: #111111;
+  font-size: 1em;
+  font-weight: 500;
+  align-items: center;
+  transition: 0.5s;
+  padding: 0.85rem 0.75rem;
+  border-radius: 3px;
+}
+.layoutMain .sideNav_layout .menusDiv .itemDiv .item img {
+  width: 24px;
+  height: 24px;
+}
+.layoutMain .sideNav_layout .menusDiv .itemDiv .item:hover, .layoutMain .sideNav_layout .menusDiv .itemDiv .item .active {
+  color: #3E87F6;
+  background: #fff;
+}
+.layoutMain .contentDiv {
+  width: 60%;
+}
+.layoutMain .contentDiv .headerMessageDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.layoutMain .contentDiv .headerMessageDiv .message h2 {
+  color: #111111;
+}
+.layoutMain .contentDiv .headerMessageDiv .message p {
+  font-size: 0.9em;
+  color: #7C8DA6;
+}
+.layoutMain .rightSideDiv {
+  width: 20%;
 }
 
 /*# sourceMappingURL=main.css.map */
