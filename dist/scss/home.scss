@@ -241,9 +241,10 @@ a{
             justify-content: center;
             align-items: center;
             text-align: center;
+            color:$white;
             transition: .5s;
             &:hover{
-                color:$white;
+                color:$text-color;
             }
          }
         }
@@ -362,6 +363,104 @@ a{
                 }
             }
         }
+    }
+    .tabsSection{
+        margin-top: 4rem;
+        transition: .5s;
+		ul.tabs{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+            li{
+                background: none;
+                color: $text-color;
+                display: inline-block;
+                padding: 10px 15px;
+                cursor: pointer;
+            }
+		}
+		
+
+		ul.tabs li.current{
+			// background: #ededed;
+            position: relative;
+			font-weight: 700;
+            &::after{
+                content: "";
+                z-index: 9;
+                height: 4px;
+                width: 90px;
+                position: absolute;
+                bottom: 0;
+                right: 17px;
+                background: linear-gradient(270deg, #3E87F6 0%, rgba(62, 135, 246, 0) 105.47%);
+            }
+		}
+
+		.tab-content{
+			display: none;
+			padding: 2rem 1rem;
+		}
+
+		.tab-content.current{
+			display: inherit;
+            .cardHorizontal{
+                padding: 0.75rem;
+                border-radius: 10px;
+                margin-bottom: 1.25rem;
+                border: 1px solid #E9EEF4;
+                img{
+                    border-radius: 6px;
+                    height:100px;
+                    max-width: 100px;
+                    object-fit: cover;
+                }
+                .cardContent{
+                    margin:.5rem 1.25rem;
+                    .name{
+                        font-size: 1em;
+                        font-weight: 500;
+                        margin-bottom: 0.1rem;
+                    }
+                    .price{
+                        font-size: 1em;
+                        font-weight: 500;
+                        color:$blue;
+                        margin-bottom: 0.2rem;
+
+                    }
+                    .propertiesList{
+                        display: flex;
+                        margin-bottom: 0.2rem;
+                        justify-content: space-between;
+                        .item{
+                            color:$grey;
+                            // display: flex;
+                            img{
+                                width: auto;
+                                height: 12px;
+                            }
+                            span{
+                                color: $grey;
+                                margin-left: 0.2rem;
+                                font-weight: 500;
+                                font-size: 0.85em;
+                            }
+                            .itemName{
+                                display: none;
+                                font-size: 0.9em;
+                                font-weight: 400;
+                                margin-top: 0px;
+                            }
+                        }
+                    }
+                    .location{
+                        font-size: 0.8em;
+                        color: $grey;
+                    }
+                }
+            }
+		}
     }
    }
    .rightSideDiv{

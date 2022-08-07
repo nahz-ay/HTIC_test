@@ -237,10 +237,11 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: #fff;
   transition: 0.5s;
 }
 .layoutMain .contentDiv .searchForm .btnForm button:hover {
-  color: #fff;
+  color: #111111;
 }
 .layoutMain .contentDiv .searchForm .filterBtn {
   margin-top: 10px;
@@ -343,6 +344,97 @@ a {
 .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard:hover .cardFooter {
   background: #2A292E;
   color: #fff;
+}
+.layoutMain .contentDiv .tabsSection {
+  margin-top: 4rem;
+  transition: 0.5s;
+}
+.layoutMain .contentDiv .tabsSection ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.layoutMain .contentDiv .tabsSection ul.tabs li {
+  background: none;
+  color: #111111;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.layoutMain .contentDiv .tabsSection ul.tabs li.current {
+  position: relative;
+  font-weight: 700;
+}
+.layoutMain .contentDiv .tabsSection ul.tabs li.current::after {
+  content: "";
+  z-index: 9;
+  height: 4px;
+  width: 90px;
+  position: absolute;
+  bottom: 0;
+  right: 17px;
+  background: linear-gradient(270deg, #3E87F6 0%, rgba(62, 135, 246, 0) 105.47%);
+}
+.layoutMain .contentDiv .tabsSection .tab-content {
+  display: none;
+  padding: 2rem 1rem;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current {
+  display: inherit;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal {
+  padding: 0.75rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  border: 1px solid #E9EEF4;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal img {
+  border-radius: 6px;
+  height: 100px;
+  max-width: 100px;
+  object-fit: cover;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent {
+  margin: 0.5rem 1.25rem;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .name {
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .price {
+  font-size: 1em;
+  font-weight: 500;
+  color: #3E87F6;
+  margin-bottom: 0.2rem;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList {
+  display: flex;
+  margin-bottom: 0.2rem;
+  justify-content: space-between;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList .item {
+  color: #7C8DA6;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList .item img {
+  width: auto;
+  height: 12px;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList .item span {
+  color: #7C8DA6;
+  margin-left: 0.2rem;
+  font-weight: 500;
+  font-size: 0.85em;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList .item .itemName {
+  display: none;
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-top: 0px;
+}
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .location {
+  font-size: 0.8em;
+  color: #7C8DA6;
 }
 .layoutMain .rightSideDiv {
   width: 20%;
