@@ -57,6 +57,7 @@ a {
 .layoutMain .contentDiv .headerMessageDiv {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
@@ -130,6 +131,99 @@ a {
 }
 .layoutMain .contentDiv .headerMessageDiv .toggleBtn .switch-button-checkbox + .switch-button-label .switch-button-label-span {
   position: relative;
+}
+.layoutMain .contentDiv .searchForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.layoutMain .contentDiv .searchForm .formInput {
+  position: relative;
+}
+.layoutMain .contentDiv .searchForm .formInput select, .layoutMain .contentDiv .searchForm .formInput input {
+  border: 1px solid gray;
+  border-radius: 6px;
+  position: relative;
+  width: 95%;
+  height: 64px;
+  margin: 10px;
+  line-height: 6ex;
+  padding: 0 1rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+.layoutMain .contentDiv .searchForm .formInput select::-ms-expand, .layoutMain .contentDiv .searchForm .formInput input::-ms-expand {
+  display: none !important;
+}
+.layoutMain .contentDiv .searchForm .formInput label {
+  position: absolute;
+  top: 0.2ex;
+  z-index: 1;
+  left: 2em;
+  background-color: white;
+  padding: 0 5px;
+}
+.layoutMain .contentDiv .searchForm .formInput select {
+  padding-left: 2.5rem !important;
+  min-width: 250px;
+}
+.layoutMain .contentDiv .searchForm .formInput .customSelectBox {
+  margin-top: 10px;
+}
+.layoutMain .contentDiv .searchForm .formInput .customSelectBox ul {
+  width: 350px;
+  border: 1px solid;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 64px;
+}
+.layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li {
+  padding: 1rem 1rem;
+  padding-left: 3.75rem;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li .mainOption {
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0.45rem 0;
+  line-height: 16px;
+  letter-spacing: 0.0025em;
+}
+.layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li .optionSec {
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li:not(.init) {
+  float: left;
+  display: none;
+  background: #ddd;
+}
+.layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li:not(.init):hover {
+  background: #3E87F6;
+  color: #fff;
+}
+.layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li .selectedOption:not(.init):hover {
+  background: #3E87F6;
+  color: #fff;
+}
+.layoutMain .contentDiv .searchForm .location::before {
+  content: "";
+  background: url("/images/icons/home.svg") no-repeat;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  z-index: 9;
+  top: 30px;
+  left: 22px;
 }
 .layoutMain .rightSideDiv {
   width: 20%;

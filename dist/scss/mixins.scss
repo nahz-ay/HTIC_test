@@ -1,0 +1,31 @@
+@mixin inputText {
+    position: relative;
+
+      select,input {
+        border: 1px solid gray;
+        border-radius: 6px;
+        position: relative;
+        width: 95%;
+        height: 64px;
+        margin: 10px;
+        line-height: 6ex;
+        padding:0 1rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+        &::-ms-expand {
+            display: none !important;
+        }
+      }
+      
+      label {
+        position: absolute;
+        top: 0.2ex;
+        z-index: 1;
+        left: 2em;
+        background-color: white;
+        padding: 0 5px;
+      }
+    
+}
