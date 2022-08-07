@@ -13,6 +13,8 @@ a {
   display: flex;
 }
 .layoutMain .sideNav_layout {
+  position: fixed;
+  top: 1px;
   width: 15%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
   height: 100vh;
@@ -52,14 +54,17 @@ a {
   background: #fff;
 }
 .layoutMain .contentDiv {
-  width: 60%;
+  margin-left: 15%;
+  padding: 2rem;
+  width: 65%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
 }
 .layoutMain .contentDiv .headerMessageDiv {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  margin-bottom: 2.5rem;
 }
 .layoutMain .contentDiv .headerMessageDiv .message h2 {
   color: #111111;
@@ -136,6 +141,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 .layoutMain .contentDiv .searchForm .formInput {
   position: relative;
@@ -215,6 +221,42 @@ a {
   background: #3E87F6;
   color: #fff;
 }
+.layoutMain .contentDiv .searchForm .btnForm {
+  margin-top: 10px;
+}
+.layoutMain .contentDiv .searchForm .btnForm button {
+  background: #3E87F6;
+  height: 64px;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 2rem;
+  border: 0;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.5s;
+}
+.layoutMain .contentDiv .searchForm .btnForm button:hover {
+  color: #fff;
+}
+.layoutMain .contentDiv .searchForm .filterBtn {
+  margin-top: 10px;
+  border: 1px solid #7C8DA6;
+  height: 64px;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.layoutMain .contentDiv .searchForm .filterBtn img {
+  height: auto;
+  object-fit: cover;
+}
+.layoutMain .contentDiv .searchForm .filterBtn:hover {
+  border-color: #3E87F6;
+}
 .layoutMain .contentDiv .searchForm .location::before {
   content: "";
   background: url("/images/icons/home.svg") no-repeat;
@@ -224,6 +266,83 @@ a {
   z-index: 9;
   top: 30px;
   left: 22px;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard {
+  border-radius: 30px;
+  transition: 0.5s;
+  width: 263px;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .textPrice {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0.74rem 0;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList {
+  display: flex;
+  justify-content: space-between;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList .item {
+  color: #7C8DA6;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList .item img {
+  width: auto;
+  height: 16px;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList .item span {
+  color: #111111;
+  margin-left: 0.2rem;
+  font-weight: 600;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList .item .itemName {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-top: 0px;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter {
+  position: relative;
+  padding: 0rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  padding: 1rem;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .location {
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 17px;
+  width: 70%;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .viewBtn button {
+  background: #725CFF;
+  padding: 0.25rem 1rem;
+  color: #fff;
+  border-radius: 6px;
+  border: 0;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard:hover .cardFooter {
+  background: #2A292E;
+  color: #fff;
 }
 .layoutMain .rightSideDiv {
   width: 20%;
