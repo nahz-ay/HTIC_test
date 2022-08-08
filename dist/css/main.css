@@ -15,6 +15,44 @@
     transform: translatey(0px);
   }
 }
+@keyframes blinker {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.4);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes sonar {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +63,10 @@ a {
   text-decoration: none !important;
 }
 
+img {
+  cursor: pointer;
+}
+
 .layoutMain {
   padding: 1rem;
   display: flex;
@@ -33,12 +75,15 @@ a {
   position: fixed;
   top: 1px;
   width: 15%;
+  transition: all 0.5s;
+  -webkit-transition: all 0.25s;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
   height: 100vh;
 }
 .layoutMain .sideNav_layout .logo {
+  cursor: pointer;
   display: flex;
-  margin: 0.5rem 1rem;
+  margin: 2rem 1rem;
 }
 .layoutMain .sideNav_layout .logo img {
   height: 36px;
@@ -61,13 +106,14 @@ a {
   align-items: center;
   transition: 0.5s;
   padding: 0.85rem 0.75rem;
-  border-radius: 3px;
+  margin: 0.5rem 0;
+  border-radius: 9px;
 }
 .layoutMain .sideNav_layout .menusDiv .itemDiv .item img {
   width: 24px;
   height: 24px;
 }
-.layoutMain .sideNav_layout .menusDiv .itemDiv .item:hover, .layoutMain .sideNav_layout .menusDiv .itemDiv .item .active {
+.layoutMain .sideNav_layout .menusDiv .itemDiv .item.active, .layoutMain .sideNav_layout .menusDiv .itemDiv .item :hover {
   color: #3E87F6;
   background: #fff;
 }
@@ -96,7 +142,7 @@ a {
 }
 .layoutMain .sideNav_layout .upgradePlanDiv .bgDiv button {
   font-size: 1em;
-  font-weight: 700;
+  font-weight: 600;
   color: #3E87F6;
   background: #fff;
   padding: 0.5rem 1rem;
@@ -104,6 +150,11 @@ a {
   margin-bottom: 1rem;
   width: 99%;
   border: 0;
+  transition: 0.3s;
+}
+.layoutMain .sideNav_layout .upgradePlanDiv .bgDiv button:hover {
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 .layoutMain .contentDiv {
   margin-left: 15%;
@@ -205,9 +256,10 @@ a {
 }
 .layoutMain .contentDiv .headerMessageDiv .message h2 {
   color: #111111;
+  font-weight: 700;
 }
-.layoutMain .contentDiv .headerMessageDiv .message rem {
-  font-size: 0.9em;
+.layoutMain .contentDiv .headerMessageDiv .message p {
+  font-size: 1em;
   color: #7C8DA6;
 }
 .layoutMain .contentDiv .headerMessageDiv .toggleBtn .switch-button {
@@ -284,12 +336,11 @@ a {
   position: relative;
 }
 .layoutMain .contentDiv .searchForm .formInput select, .layoutMain .contentDiv .searchForm .formInput input {
-  border: 1px solid gray;
+  border: 1px solid #dcd8d8;
   border-radius: 6px;
   position: relative;
   width: 95%;
   height: 64px;
-  margin: 10px;
   line-height: 6ex;
   padding: 0 1rem;
   -webkit-appearance: none;
@@ -300,16 +351,20 @@ a {
 .layoutMain .contentDiv .searchForm .formInput select::-ms-expand, .layoutMain .contentDiv .searchForm .formInput input::-ms-expand {
   display: none !important;
 }
+.layoutMain .contentDiv .searchForm .formInput select:focus-visible, .layoutMain .contentDiv .searchForm .formInput input:focus-visible {
+  border: 1px solid #dcd8d8;
+  box-shadow: none;
+}
 .layoutMain .contentDiv .searchForm .formInput label {
   position: absolute;
-  top: 0.2ex;
+  top: 0rem;
   z-index: 1;
-  left: 2em;
+  left: 2rem;
   background-color: white;
   padding: 0 5px;
 }
 .layoutMain .contentDiv .searchForm .formInput select {
-  padding-left: 2.5rem !important;
+  padding-left: 3rem !important;
   min-width: 250px;
 }
 .layoutMain .contentDiv .searchForm .formInput .customSelectBox {
@@ -317,7 +372,7 @@ a {
 }
 .layoutMain .contentDiv .searchForm .formInput .customSelectBox ul {
   width: 350px;
-  border: 1px solid;
+  border: 1px solid #dcd8d8;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -382,7 +437,7 @@ a {
 }
 .layoutMain .contentDiv .searchForm .filterBtn {
   margin-top: 10px;
-  border: 1px solid #7C8DA6;
+  border: 1px solid #dcd8d8;
   height: 64px;
   padding: 1rem;
   border-radius: 10px;
@@ -395,15 +450,25 @@ a {
 .layoutMain .contentDiv .searchForm .filterBtn:hover {
   border-color: #3E87F6;
 }
-.layoutMain .contentDiv .searchForm .location::before {
+.layoutMain .contentDiv .searchForm .location::before, .layoutMain .contentDiv .searchForm .type::before {
   content: "";
   background: url("/images/icons/home.svg") no-repeat;
   width: 25px;
   height: 25px;
   position: absolute;
   z-index: 9;
-  top: 30px;
+  top: 31px;
   left: 22px;
+}
+.layoutMain .contentDiv .searchForm .type {
+  margin-top: 10px;
+}
+.layoutMain .contentDiv .searchForm .type label {
+  margin-top: -12px;
+}
+.layoutMain .contentDiv .searchForm .type::before {
+  top: 20px;
+  left: 16px;
 }
 .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv {
   display: flex;
@@ -465,7 +530,7 @@ a {
   border-bottom-right-radius: 9px;
   padding: 1rem;
 }
-.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .location {
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .location, .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .searchForm .type, .layoutMain .contentDiv .searchForm .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .type {
   font-size: 0.8em;
   font-weight: 400;
   line-height: 17px;
@@ -477,6 +542,9 @@ a {
   color: #fff;
   border-radius: 6px;
   border: 0;
+}
+.layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard:hover .cardBody {
+  border: 1px solid #b5b4b93c;
 }
 .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard:hover .cardFooter {
   background: #2A292E;
@@ -569,12 +637,932 @@ a {
   font-weight: 400;
   margin-top: 0px;
 }
-.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .location {
+.layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .location, .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .searchForm .type, .layoutMain .contentDiv .searchForm .tabsSection .tab-content.current .cardHorizontal .cardContent .type {
   font-size: 0.8em;
   color: #7C8DA6;
 }
 .layoutMain .rightSideDiv {
   width: 20%;
+  padding: 1rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
+}
+.layoutMain .rightSideDiv .leftTopBar {
+  position: sticky;
+  top: 0rem;
+  right: 0;
+  width: 100%;
+  padding: 0rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
+}
+.layoutMain .rightSideDiv .leftTopBar .notifications {
+  position: relative;
+}
+.layoutMain .rightSideDiv .leftTopBar .notifications:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 4px;
+  background: #3E87F6;
+  animation-name: sonar;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.layoutMain .rightSideDiv .leftTopBar .notifications img {
+  width: 25px;
+  height: 25px;
+}
+.layoutMain .rightSideDiv .leftTopBar .avatar {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.layoutMain .rightSideDiv .leftTopBar .avatar:after {
+  content: "";
+  position: absolute;
+  background: #FEEDB5;
+  bottom: 0;
+  left: 35px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+.layoutMain .rightSideDiv .leftTopBar .avatar:before {
+  content: "+";
+  font-weight: 800;
+  z-index: 9;
+  position: absolute;
+  bottom: 2px;
+  left: 38px;
+  width: 20px;
+  height: 20px;
+}
+.layoutMain .rightSideDiv .leftTopBar .avatar .arrow {
+  background: url("/images/icons/arrow.png") no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0.5rem;
+}
+.layoutMain .rightSideDiv .propertiesDiv {
+  margin-top: 3rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.layoutMain .rightSideDiv .propertiesDiv h6 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.layoutMain .rightSideDiv .propertiesDiv .imagesDiv {
+  margin-bottom: 1rem;
+}
+.layoutMain .rightSideDiv .propertiesDiv .imagesDiv img {
+  border-radius: 10px;
+  width: 170px;
+  height: 210px;
+  object-fit: cover;
+}
+.layoutMain .rightSideDiv .propertiesDiv .imagesDiv .smallImages img {
+  width: 100px;
+  height: 100px;
+  margin: 0.25rem;
+  object-fit: cover;
+}
+.layoutMain .rightSideDiv .propertiesDiv .name {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.layoutMain .rightSideDiv .propertiesDiv .propertiesList {
+  display: flex;
+  justify-content: space-between;
+}
+.layoutMain .rightSideDiv .propertiesDiv .propertiesList .item {
+  color: #7C8DA6;
+}
+.layoutMain .rightSideDiv .propertiesDiv .propertiesList .item img {
+  width: auto;
+  height: 16px;
+}
+.layoutMain .rightSideDiv .propertiesDiv .propertiesList .item span {
+  color: #111111;
+  margin-left: 0.2rem;
+  font-weight: 600;
+}
+.layoutMain .rightSideDiv .propertiesDiv .propertiesList .item .itemName {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-top: 0px;
+}
+.layoutMain .rightSideDiv .propertiesDiv .locationDiv {
+  margin-top: 0.5rem;
+  color: #7C8DA6;
+  font-size: 0.9em;
+}
+.layoutMain .rightSideDiv .propertiesDiv .descriptionDiv {
+  position: relative;
+}
+.layoutMain .rightSideDiv .propertiesDiv .descriptionDiv p {
+  display: block;
+  color: #7C8DA6;
+  font-size: 1em;
+  line-height: 21px;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 63px;
+  margin: 0 auto;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.layoutMain .rightSideDiv .propertiesDiv .descriptionDiv p::after {
+  position: absolute;
+  content: "Read more";
+  width: 100%;
+  color: #3E87F6;
+  bottom: -20px;
+  left: 0;
+}
+.layoutMain .rightSideDiv .propertiesDiv .mapEmbeded {
+  margin-top: 3rem;
+}
+.layoutMain .rightSideDiv .propertiesDiv .mapEmbeded .canvas, .layoutMain .rightSideDiv .propertiesDiv .mapEmbeded iframe {
+  height: 250px;
+  border-radius: 10px;
+}
+.layoutMain .rightSideDiv .propertiesDiv .mapEmbeded .priceBtn_Map {
+  margin: 1rem 0rem;
+}
+.layoutMain .rightSideDiv .propertiesDiv .mapEmbeded .priceBtn_Map button {
+  border: 0;
+  width: 100%;
+  padding: 1rem 4rem;
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: 700;
+  background: #3E87F6;
+  border-radius: 9px;
+  transition: 0.5s;
+}
+.layoutMain .rightSideDiv .propertiesDiv .mapEmbeded .priceBtn_Map button:hover {
+  color: #111111;
+}
+
+@media screen and (max-width: 992px) {
+  .layoutMain {
+    padding: 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .layoutMain .hamBurgerMenu {
+    position: sticky;
+    z-index: 99;
+    width: 10px;
+    background: #fff;
+    top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.2rem;
+    font-weight: 700;
+  }
+  .layoutMain .sideNav_layout {
+    position: fixed;
+    transition: 0.5s;
+    top: 1px;
+    left: 0;
+    width: fit-content;
+    background: #fff !important;
+    z-index: 999;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+  }
+  .layoutMain .sideNav_layout .closeBtn {
+    padding: 0.2rem;
+    background: #E5E5E5;
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .layoutMain .sideNav_layout .logo {
+    display: flex;
+    margin: 0.5rem 1rem;
+  }
+  .layoutMain .sideNav_layout .logo img {
+    height: 36px;
+    width: 36px;
+  }
+  .layoutMain .sideNav_layout .logo .name {
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: 0 0.75rem;
+  }
+  .layoutMain .sideNav_layout .menusDiv {
+    margin-top: 2rem;
+  }
+  .layoutMain .sideNav_layout .menusDiv .itemDiv {
+    margin: 0.5rem;
+  }
+  .layoutMain .sideNav_layout .menusDiv .itemDiv .item {
+    display: flex;
+    gap: 1rem;
+    color: #111111;
+    font-size: 1em;
+    font-weight: 500;
+    align-items: center;
+    transition: 0.5s;
+    padding: 0.85rem 0.75rem;
+    border-radius: 3px;
+  }
+  .layoutMain .sideNav_layout .menusDiv .itemDiv .item img {
+    width: 24px;
+    height: 24px;
+  }
+  .layoutMain .sideNav_layout .menusDiv .itemDiv .item:hover, .layoutMain .sideNav_layout .menusDiv .itemDiv .item .active {
+    color: #3E87F6;
+    background: #fff;
+  }
+  .layoutMain .sideNav_layout .upgradePlanDiv {
+    position: absolute;
+    bottom: 10px;
+  }
+  .layoutMain .sideNav_layout .upgradePlanDiv .bgDiv {
+    background: #3E87F6;
+    padding: 1rem;
+    height: 137px;
+    border-radius: 10px;
+    margin: 0 1rem;
+  }
+  .layoutMain .sideNav_layout .upgradePlanDiv .bgDiv img {
+    position: absolute;
+    bottom: 3.85rem;
+    animation: rocket 7s ease-in-out infinite;
+  }
+  .layoutMain .sideNav_layout .upgradePlanDiv .bgDiv .text {
+    margin-top: 2rem;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 0.4rem;
+  }
+  .layoutMain .sideNav_layout .upgradePlanDiv .bgDiv button {
+    font-size: 1em;
+    font-weight: 600;
+    color: #3E87F6;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    width: 99%;
+    border: 0;
+    transition: 0.3s;
+  }
+  .layoutMain .sideNav_layout .upgradePlanDiv .bgDiv button:hover {
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .layoutMain .sideNav_layout.expand {
+    display: none;
+  }
+  .layoutMain .contentDiv {
+    margin-left: 0%;
+    padding: 0rem;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
+  }
+  .layoutMain .contentDiv .headerMessageDiv {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+    margin: 0.5rem;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn {
+    padding: 1rem 0;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn span::after {
+    content: attr(data-text);
+    position: absolute;
+    border-radius: 10px;
+    padding: 6px 20px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
+    user-select: none;
+    transition: transform 100ms ease-in;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn span:active::after {
+    transform: scale(0.9);
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .pumping::after {
+    animation: pumping 100s ease-in-out infinite;
+  }
+  @keyframes pumping {
+    50% {
+      transform: scale(0.95);
+    }
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .shape {
+    --size: 8px;
+    position: absolute;
+    top: calc(50% - var(--size));
+    left: calc(50% - var(--size));
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 2);
+    animation: popup var(--d) cubic-bezier(0.08, 0.56, 0.53, 0.98) forwards;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .square {
+    border-radius: 4px;
+    background-color: var(--c);
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .circle {
+    border-radius: 50%;
+    background-color: var(--c);
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .triangle {
+    width: 0px;
+    height: 0px;
+    background-color: none;
+    border-top: var(--size) solid transparent;
+    border-bottom: calc(var(--size) * 2) solid var(--c);
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart {
+    --size: 6px;
+    background-color: var(--c);
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart::before, .layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--c);
+    border-radius: 50%;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart::before {
+    left: -50%;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .heart::after {
+    top: -50%;
+  }
+  @keyframes popup {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--x), var(--y)) rotate(var(--r));
+    }
+  }
+  .layoutMain .contentDiv .headerMessageDiv .confetteBtn .pumping {
+    display: none;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .message {
+    width: 60%;
+    margin-left: -120px;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .message h2 {
+    color: #111111;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .message rem {
+    font-size: 0.9em;
+    color: #7C8DA6;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .toggleBtn {
+    margin-left: auto;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .toggleBtn .switch-button {
+    background: #F5F5F5;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 150px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #111111;
+    position: relative;
+    padding-right: 75px;
+    position: relative;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .toggleBtn .switch-button:before {
+    content: "Buy";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .toggleBtn .switch-button-checkbox {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .toggleBtn .switch-button-checkbox:checked + .switch-button-label:before {
+    transform: translateX(75px);
+    transition: transform 300ms linear;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .toggleBtn .switch-button-checkbox + .switch-button-label {
+    position: relative;
+    padding: 15px 0;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .toggleBtn .switch-button-checkbox + .switch-button-label:before {
+    content: "";
+    background: #fff;
+    height: 74%;
+    width: 75%;
+    position: absolute;
+    left: 11px;
+    top: 7px;
+    border-radius: 15px;
+    transform: translateX(0);
+    transition: transform 300ms;
+  }
+  .layoutMain .contentDiv .headerMessageDiv .toggleBtn .switch-button-checkbox + .switch-button-label .switch-button-label-span {
+    position: relative;
+  }
+  .layoutMain .contentDiv .searchForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin-bottom: 2rem;
+  }
+  .layoutMain .contentDiv .searchForm .formInput {
+    display: block;
+    width: 95%;
+  }
+  .layoutMain .contentDiv .searchForm .formInput select {
+    padding-left: 3.5rem !important;
+    min-width: 100%;
+  }
+  .layoutMain .contentDiv .searchForm .formInput .customSelectBox {
+    margin-top: 10px;
+  }
+  .layoutMain .contentDiv .searchForm .formInput .customSelectBox ul {
+    width: 100% !important;
+    border: 1px solid #dcd8d8;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 64px;
+  }
+  .layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li {
+    padding: 1rem 1rem;
+    padding-left: 3.75rem;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li .mainOption {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0.45rem 0;
+    line-height: 16px;
+    letter-spacing: 0.0025em;
+  }
+  .layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li .optionSec {
+    font-size: 0.8em;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li:not(.init) {
+    float: left;
+    display: none;
+    background: #ddd;
+  }
+  .layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li:not(.init):hover {
+    background: #3E87F6;
+    color: #fff;
+  }
+  .layoutMain .contentDiv .searchForm .formInput .customSelectBox ul li .selectedOption:not(.init):hover {
+    background: #3E87F6;
+    color: #fff;
+  }
+  .layoutMain .contentDiv .searchForm .btnForm {
+    margin-top: 10px;
+    width: 70%;
+    margin-right: 1.75rem;
+  }
+  .layoutMain .contentDiv .searchForm .btnForm button {
+    background: #3E87F6;
+    height: 64px;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 2rem;
+    border: 0;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    transition: 0.5s;
+  }
+  .layoutMain .contentDiv .searchForm .btnForm button:hover {
+    color: #111111;
+  }
+  .layoutMain .contentDiv .searchForm .filterBtn {
+    margin-top: 10px;
+    border: 1px solid #dcd8d8;
+    height: 64px;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  .layoutMain .contentDiv .searchForm .filterBtn img {
+    height: auto;
+    object-fit: cover;
+  }
+  .layoutMain .contentDiv .searchForm .filterBtn:hover {
+    border-color: #3E87F6;
+  }
+  .layoutMain .contentDiv .searchForm .type label {
+    margin-top: -12px;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard {
+    border-radius: 30px;
+    transition: 0.5s;
+    width: 100%;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .textPrice {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0.4rem 0;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList {
+    display: flex;
+    justify-content: space-between;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList .item {
+    color: #7C8DA6;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList .item img {
+    width: auto;
+    height: 16px;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList .item span {
+    color: #111111;
+    margin-left: 0.2rem;
+    font-weight: 600;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardBody .propertiesList .item .itemName {
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-top: 0px;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter {
+    position: relative;
+    padding: 0rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    padding: 1rem;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .location, .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .searchForm .type, .layoutMain .contentDiv .searchForm .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .type {
+    font-size: 0.8em;
+    font-weight: 400;
+    line-height: 17px;
+    width: 70%;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard .cardFooter .viewBtn button {
+    background: #725CFF;
+    padding: 0.25rem 1rem;
+    color: #fff;
+    border-radius: 6px;
+    border: 0;
+  }
+  .layoutMain .contentDiv .searchResultsCardsDiv .cardsDiv .resultCard:hover .cardFooter {
+    background: #2A292E;
+    color: #fff;
+  }
+  .layoutMain .contentDiv .tabsSection {
+    margin-top: 4rem;
+    transition: 0.5s;
+  }
+  .layoutMain .contentDiv .tabsSection ul.tabs {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+  }
+  .layoutMain .contentDiv .tabsSection ul.tabs li {
+    background: none;
+    color: #111111;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  .layoutMain .contentDiv .tabsSection ul.tabs li.current {
+    position: relative;
+    font-weight: 700;
+  }
+  .layoutMain .contentDiv .tabsSection ul.tabs li.current::after {
+    content: "";
+    z-index: 9;
+    height: 4px;
+    width: 90px;
+    position: absolute;
+    bottom: 0;
+    right: 17px;
+    background: linear-gradient(270deg, #3E87F6 0%, rgba(62, 135, 246, 0) 105.47%);
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content {
+    display: none;
+    padding: 2rem 1rem;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current {
+    display: inherit;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal {
+    padding: 0.75rem;
+    border-radius: 10px;
+    margin-bottom: 1.25rem;
+    border: 1px solid #E9EEF4;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal img {
+    border-radius: 6px;
+    height: 100px;
+    max-width: 100px;
+    object-fit: cover;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent {
+    margin: 0.5rem 1.25rem;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .name {
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .price {
+    font-size: 1em;
+    font-weight: 500;
+    color: #3E87F6;
+    margin-bottom: 0.2rem;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList {
+    display: flex;
+    margin-bottom: 0.2rem;
+    justify-content: space-between;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList .item {
+    color: #7C8DA6;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList .item img {
+    width: auto;
+    height: 12px;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList .item span {
+    color: #7C8DA6;
+    margin-left: 0.2rem;
+    font-weight: 500;
+    font-size: 0.85em;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .propertiesList .item .itemName {
+    display: none;
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-top: 0px;
+  }
+  .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .location, .layoutMain .contentDiv .tabsSection .tab-content.current .cardHorizontal .cardContent .searchForm .type, .layoutMain .contentDiv .searchForm .tabsSection .tab-content.current .cardHorizontal .cardContent .type {
+    font-size: 0.8em;
+    color: #7C8DA6;
+  }
+  .layoutMain .rightSideDiv {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
+  }
+  .layoutMain .rightSideDiv .leftTopBar {
+    position: fixed;
+    top: 0rem;
+    right: 20px;
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    background: transparent;
+  }
+  .layoutMain .rightSideDiv .leftTopBar .notifications {
+    position: relative;
+    margin-left: auto;
+  }
+  .layoutMain .rightSideDiv .leftTopBar .notifications:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 4px;
+    background: #3E87F6;
+    animation-name: sonar;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .layoutMain .rightSideDiv .leftTopBar .notifications img {
+    width: 25px;
+    height: 25px;
+  }
+  .layoutMain .rightSideDiv .leftTopBar .avatar {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+  }
+  .layoutMain .rightSideDiv .leftTopBar .avatar img {
+    width: 40px;
+  }
+  .layoutMain .rightSideDiv .leftTopBar .avatar:after {
+    content: "";
+    position: absolute;
+    background: #FEEDB5;
+    bottom: 1px;
+    left: 30px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+  }
+  .layoutMain .rightSideDiv .leftTopBar .avatar:before {
+    content: "+";
+    font-weight: 800;
+    z-index: 9;
+    position: absolute;
+    bottom: 5px;
+    left: 33px;
+    width: 20px;
+    height: 20px;
+  }
+  .layoutMain .rightSideDiv .leftTopBar .avatar .arrow {
+    display: none;
+    background: url("/images/icons/arrow.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0.5rem;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv {
+    margin-top: 3rem;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv h6 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .imagesDiv {
+    margin-bottom: 1rem;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .imagesDiv img {
+    border-radius: 10px;
+    width: 170px;
+    height: 210px;
+    object-fit: cover;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .imagesDiv .smallImages img {
+    width: 100px;
+    height: 100px;
+    margin: 0.25rem;
+    object-fit: cover;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .name {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .propertiesList {
+    display: flex;
+    justify-content: space-between;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .propertiesList .item {
+    color: #7C8DA6;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .propertiesList .item img {
+    width: auto;
+    height: 16px;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .propertiesList .item span {
+    color: #111111;
+    margin-left: 0.2rem;
+    font-weight: 600;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .propertiesList .item .itemName {
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-top: 0px;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .locationDiv {
+    margin-top: 0.5rem;
+    color: #7C8DA6;
+    font-size: 0.9em;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .descriptionDiv {
+    position: relative;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .descriptionDiv p {
+    display: block;
+    color: #7C8DA6;
+    font-size: 1em;
+    line-height: 21px;
+    display: -webkit-box;
+    max-width: 100%;
+    height: 63px;
+    margin: 0 auto;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .descriptionDiv p::after {
+    position: absolute;
+    content: "Read more";
+    width: 100%;
+    color: #3E87F6;
+    bottom: -20px;
+    left: 0;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .mapEmbeded {
+    margin-top: 3rem;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .mapEmbeded .canvas, .layoutMain .rightSideDiv .propertiesDiv .mapEmbeded iframe {
+    height: 250px;
+    border-radius: 10px;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .mapEmbeded .priceBtn_Map {
+    margin: 1rem 0rem;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .mapEmbeded .priceBtn_Map button {
+    border: 0;
+    width: 100%;
+    padding: 1rem 4rem;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 700;
+    background: #3E87F6;
+    border-radius: 9px;
+    transition: 0.5s;
+  }
+  .layoutMain .rightSideDiv .propertiesDiv .mapEmbeded .priceBtn_Map button:hover {
+    color: #111111;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

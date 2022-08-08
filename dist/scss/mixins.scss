@@ -2,12 +2,11 @@
     position: relative;
 
       select,input {
-        border: 1px solid gray;
+        border: 1px solid rgb(220, 216, 216);
         border-radius: 6px;
         position: relative;
         width: 95%;
         height: 64px;
-        margin: 10px;
         line-height: 6ex;
         padding:0 1rem;
         -webkit-appearance: none;
@@ -17,13 +16,17 @@
         &::-ms-expand {
             display: none !important;
         }
+        &:focus-visible{
+          border: 1px solid rgb(220, 216, 216);
+          box-shadow: none;
+        }
       }
       
       label {
         position: absolute;
-        top: 0.2ex;
+        top: 0rem;
         z-index: 1;
-        left: 2em;
+        left: 2rem;
         background-color: white;
         padding: 0 5px;
       }
@@ -114,5 +117,28 @@ span {
       opacity: 0;
       transform: translate(var(--x), var(--y)) rotate(var(--r));
     }
+  }
+}
+
+@mixin properties {
+  display: flex;
+  justify-content: space-between;
+  .item{
+      color:$grey;
+      // display: flex;
+      img{
+          width: auto;
+          height: 16px;
+      }
+      span{
+          color: $text-color;
+          margin-left: 0.2rem;
+          font-weight: 600;
+      }
+      .itemName{
+          font-size: 0.9em;
+          font-weight: 400;
+          margin-top: 0px;
+      }
   }
 }

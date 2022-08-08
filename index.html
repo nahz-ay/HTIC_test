@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/dist/css/main.css"/>
+    <link rel="stylesheet" href="dist/css/main.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -16,57 +16,60 @@
   <body>
     <main>
         <div class="layoutMain container-fluid">
-            <section class="sideNav_layout">
+            <div class="hamBurgerMenu d-lg-none d-block" id="hamBurgerMenu">III</div>
+            <section class="sideNav_layout expand">
+                
                     <div class="logo mb-lg-5">
-                        <img src="/images/Logo.png"  alt="">
+                        <img src="images/Logo.png"  alt="">
                         <div class="name">Home</div>
+                        <div class="closeBtn d-lg-none d-block">x</div>
                     </div>
-                    <div class="menusDiv">
+                    <div class="menusDiv"  id="hamBurgerMenu">
                         <div class="itemDiv">
-                            <a href="#" class="item">
-                                <img src="/images/icons/home.svg" alt="">
+                            <a href="#" class="item active">
+                                <img src="images/icons/home.svg" alt="">
                                 Dashboard
                             </a>
                         </div>
                         <div class="itemDiv">
                             <a href="#" class="item">
-                                <img src="/images/icons/home.svg" alt="">
+                                <img src="images/icons/home.svg" alt="">
                                 Dashboard
                             </a>
                         </div>
                         <div class="itemDiv">
                             <a href="#" class="item">
-                                <img src="/images/icons/home.svg" alt="">
+                                <img src="images/icons/home.svg" alt="">
                                 Dashboard
                             </a>
                         </div>
                         <div class="itemDiv">
                             <a href="#" class="item">
-                                <img src="/images/icons/home.svg" alt="">
+                                <img src="images/icons/home.svg" alt="">
                                 Dashboard
                             </a>
                         </div>
                         <div class="itemDiv">
                             <a href="#" class="item">
-                                <img src="/images/icons/home.svg" alt="">
+                                <img src="images/icons/home.svg" alt="">
                                 Dashboard
                             </a>
                         </div>
                         <div class="itemDiv">
                             <a href="#" class="item">
-                                <img src="/images/icons/home.svg" alt="">
+                                <img src="images/icons/home.svg" alt="">
                                 Dashboard
                             </a>
                         </div>
                     </div>
                     <div class="upgradePlanDiv">
                         <div class="bgDiv">
-                            <img src="/images/icons/man.png" class="img-fluid" alt="">
+                            <img src="images/icons/man.png" class="img-fluid" alt="">
                             <div class="text">Upgrade Your Plan</div>
                             <button>Upgrade</button>
                         </div>
                     </div>
-                </section>
+            </section>
             <section class="contentDiv">
                 <div class="headerMessageDiv">
                     <div class="message confetteBtn ">
@@ -106,7 +109,7 @@
                             </div>
 
                         </div>
-                        <div class="formInput location">
+                        <div class="formInput type">
                             <label for="Location">Type</label>
                             <select>
                                 <option selected>Select Location</option>
@@ -121,7 +124,7 @@
                             <button>Search</button>
                         </div>
                         <div class="filterBtn">
-                            <img src="/images/icons/filter.png" alt="">
+                            <img src="images/icons/filter.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -130,21 +133,21 @@
                     <div class="cardsDiv">
                         <div class="resultCard">
                             <div class="cardBody">
-                                <img src="/images/pixasquare-4ojhpgKpS68-unsplash.png" alt="">
+                                <img src="images/pixasquare-4ojhpgKpS68-unsplash.png" alt="">
                                 <div class="textPrice">$269,000</div>
                                 <div class="propertiesList">
                                     <div class="item">
-                                        <img src="/images/icons/bed.png" alt="">
+                                        <img src="images/icons/bed.png" alt="">
                                         <span>6</span>
                                         <div class="itemName">Bedroom</div>
                                     </div>
                                     <div class="item">
-                                        <img src="/images/icons/bed.png" alt="">
+                                        <img src="images/icons/bed.png" alt="">
                                         <span>6</span>
                                         <div class="itemName">Bathroom</div>
                                     </div>
                                     <div class="item">
-                                        <img src="/images/icons/bed.png" alt="">
+                                        <img src="images/icons/bed.png" alt="">
                                         <span>600 m</span>
                                         <div class="itemName">LivingArea</div>
                                     </div>
@@ -162,21 +165,21 @@
                         </div>
                         <div class="resultCard">
                             <div class="cardBody">
-                                <img src="/images/pixasquare-4ojhpgKpS68-unsplash.png" alt="">
+                                <img src="images/pixasquare-4ojhpgKpS68-unsplash.png" alt="">
                                 <div class="textPrice">$269,000</div>
                                 <div class="propertiesList">
                                     <div class="item">
-                                        <img src="/images/icons/bed.png" alt="">
+                                        <img src="images/icons/bed.png" alt="">
                                         <span>6</span>
                                         <div class="itemName">Bedroom</div>
                                     </div>
                                     <div class="item">
-                                        <img src="/images/icons/bed.png" alt="">
+                                        <img src="images/icons/bed.png" alt="">
                                         <span>6</span>
                                         <div class="itemName">Bathroom</div>
                                     </div>
                                     <div class="item">
-                                        <img src="/images/icons/bed.png" alt="">
+                                        <img src="images/icons/bed.png" alt="">
                                         <span>600 m</span>
                                         <div class="itemName">LivingArea</div>
                                     </div>
@@ -194,21 +197,21 @@
                         </div>
                         <div class="resultCard">
                             <div class="cardBody">
-                                <img src="/images/pixasquare-4ojhpgKpS68-unsplash.png" alt="">
+                                <img src="images/pixasquare-4ojhpgKpS68-unsplash.png" alt="">
                                 <div class="textPrice">$269,000</div>
                                 <div class="propertiesList">
                                     <div class="item">
-                                        <img src="/images/icons/bed.png" alt="">
+                                        <img src="images/icons/bed.png" alt="">
                                         <span>6</span>
                                         <div class="itemName">Bedroom</div>
                                     </div>
                                     <div class="item">
-                                        <img src="/images/icons/bed.png" alt="">
+                                        <img src="images/icons/bed.png" alt="">
                                         <span>6</span>
                                         <div class="itemName">Bathroom</div>
                                     </div>
                                     <div class="item">
-                                        <img src="/images/icons/bed.png" alt="">
+                                        <img src="images/icons/bed.png" alt="">
                                         <span>600 m</span>
                                         <div class="itemName">LivingArea</div>
                                     </div>
@@ -240,22 +243,22 @@
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -268,22 +271,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -296,22 +299,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -324,22 +327,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -356,22 +359,22 @@
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/pixasquare-4ojhpgKpS68-unsplash.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/pixasquare-4ojhpgKpS68-unsplash.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -384,22 +387,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -412,22 +415,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/pixasquare-4ojhpgKpS68-unsplash.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/pixasquare-4ojhpgKpS68-unsplash.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -440,22 +443,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -472,22 +475,22 @@
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -500,22 +503,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -528,22 +531,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -556,22 +559,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -588,22 +591,22 @@
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -616,22 +619,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/pixasquare-4ojhpgKpS68-unsplash.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/pixasquare-4ojhpgKpS68-unsplash.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -644,22 +647,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -672,22 +675,22 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="cardHorizontal d-flex align-items-center">
-                                    <img src="/images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
+                                    <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" class="cardImg img-fluid" alt="">
                                     <div class="cardContent">
                                         <div class="name"> Metro Jayakatra Hotel & Spa</div>
                                         <div class="price">$39,000</div>
                                         <div>
                                             <div class="propertiesList">
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>6</span>
                                                 </div>
                                                 <div class="item">
-                                                    <img src="/images/icons/bed.png" alt="">
+                                                    <img src="images/icons/bed.png" alt="">
                                                     <span>600 m</span>
                                                 </div>
                                             </div>
@@ -707,7 +710,68 @@
                 
             </section>
             <section class="rightSideDiv">
-                <h6>Property Details</h6>
+                <div class="leftTopBar">
+                   <div class="d-flex gap-lg-5 gap-3 align-items-center">
+                    <div class="notifications">
+                        <img src="images/icons/bell.png" alt="">
+                    </div>
+                    <div class="avatar">
+                        <img src="images/icons/avatar.png" alt="">
+                        <div class="arrow"></div>
+                    </div>
+
+                   </div>
+                </div>
+                <div class="propertiesDiv">
+                    <h6>Property Details</h6>
+                    <div class="imagesDiv">
+                        <div class="d-flex gap-1 align-items-center">
+                            <div class="d-block">
+                                <img src="images/ralph-ravi-kayden-vbSRUrNm3Ik-unsplash 1.png" alt="">
+                            </div>
+                            <div class="d-block smallImages">
+                                <img src="images/Image.png" alt="">
+                                <img src="images/Image.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="name">Pixa Apartamnet</div>
+                    <div class="propertiesList">
+                        <div class="item">
+                            <img src="images/icons/bed.png" alt="">
+                            <span>6</span>
+                            <div class="itemName">Bedroom</div>
+                        </div>
+                        <div class="item">
+                            <img src="images/icons/bed.png" alt="">
+                            <span>6</span>
+                            <div class="itemName">Bathroom</div>
+                        </div>
+                        <div class="item">
+                            <img src="images/icons/bed.png" alt="">
+                            <span>600m</span>
+                            <div class="itemName">LivingArea</div>
+                        </div>
+                    </div>
+                    <div class="locationDiv d-flex gap-1">
+                        <img src="images/icons/location.png" alt="">
+                        6391 Elgin St. Celina, Delaware 10299
+                    </div>
+                    <div class="descriptionDiv mt-5">
+                        <h4>Description</h4>
+                        <p>The structure has been simplified to the maximum to give free rein to a game of vertical and horizontal planes and the identity of the project is defined by the strong presence of the cantilevers and the fine protective mesh of the balconies
+                             </p>   
+                    </div>
+                    <div class="mapEmbeded">
+                        <div class="canvas">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9555181.893600633!2d-13.425339505276357!3d54.21888570393256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited%20Kingdom!5e0!3m2!1sen!2sin!4v1659939928881!5m2!1sen!2sin" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="priceBtn_Map">
+                            <button>Price: $99,000</button>
+                        </div>
+                    </div>
+                    
+                </div>
             </section>
         </div>
     </main>
@@ -719,15 +783,20 @@
     
             $('.item').on('click', function () {
                 // alert("213");
-                $('.item').removeClass('itemActive');
-                $(this).addClass('itemActive');
+                $('.item').removeClass('active');
+                $(this).addClass('active');
             });
     
             // sidebar collaspe/expand -----------------
-            $(".hamMenu").click(function () {
+            $("#hamBurgerMenu").click(function () {
                 // alert("clikced");
-                $(".sidebar").toggleClass("sidebar-collapse");
-                $(".contentMainDiv").toggleClass("contentMainDivpl");
+                $(".sideNav_layout").toggleClass("expand");
+                
+            });
+            $(".closeBtn").click(function () {
+                // alert("clikced");
+                $(".sideNav_layout").toggleClass("expand");
+                
             });
             // sidebar collaspe/expand ENds -----------------
     
