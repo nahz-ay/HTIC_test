@@ -896,13 +896,13 @@ img {
   .layoutMain .sideNav_layout .upgradePlanDiv .bgDiv {
     background: #3E87F6;
     padding: 1rem;
-    height: 137px;
+    height: 157px;
     border-radius: 10px;
     margin: 0 1rem;
   }
   .layoutMain .sideNav_layout .upgradePlanDiv .bgDiv img {
     position: absolute;
-    bottom: 3.85rem;
+    bottom: 4.85rem;
     animation: rocket 7s ease-in-out infinite;
   }
   .layoutMain .sideNav_layout .upgradePlanDiv .bgDiv .text {
