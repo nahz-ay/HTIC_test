@@ -7,8 +7,8 @@ $white:#fff;
 $bg:#E5E5E5;
 $bg2:linear-gradient(90deg, rgba(255, 255, 255, 0.22) -43.55%, #FBFAF8 118.41%);
 
-
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+$font: 'Open Sans', sans-serif;
 
 @keyframes rocket {
 	0% {

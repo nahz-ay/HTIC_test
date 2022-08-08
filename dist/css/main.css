@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 @keyframes rocket {
   0% {
     -webkit-filter: drop-shadow(50 5px 15px 0px rgba(0, 0, 0, 0.6));
@@ -67,6 +68,10 @@ img {
   cursor: pointer;
 }
 
+body {
+  font-family: "Open Sans", sans-serif !important;
+}
+
 .layoutMain {
   padding: 1rem;
   display: flex;
@@ -104,7 +109,7 @@ img {
   font-size: 1em;
   font-weight: 500;
   align-items: center;
-  transition: 0.5s;
+  transition: 0.3s;
   padding: 0.85rem 0.75rem;
   margin: 0.5rem 0;
   border-radius: 9px;
@@ -354,6 +359,7 @@ img {
 .layoutMain .contentDiv .searchForm .formInput select:focus-visible, .layoutMain .contentDiv .searchForm .formInput input:focus-visible {
   border: 1px solid #dcd8d8;
   box-shadow: none;
+  outline: 0 !important;
 }
 .layoutMain .contentDiv .searchForm .formInput label {
   position: absolute;
