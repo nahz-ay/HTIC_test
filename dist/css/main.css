@@ -1118,6 +1118,7 @@ img {
   .layoutMain .contentDiv .searchForm {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.2rem;
     margin-bottom: 2rem;
   }
@@ -1184,7 +1185,7 @@ img {
     background: #3E87F6;
     height: 64px;
     width: 100%;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 700;
     padding: 2rem;
     border: 0;

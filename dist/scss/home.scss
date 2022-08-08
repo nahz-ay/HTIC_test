@@ -903,6 +903,7 @@ img{cursor: pointer;}
         .searchForm{
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 0.2rem;
             margin-bottom: 2rem;
             .formInput{
@@ -977,7 +978,7 @@ img{cursor: pointer;}
                 background: $theme-color;
                 height: 64px;
                 width: 100%;
-                font-size: 1em;
+                font-size: 1.5em;
                 font-weight: 700;
                 padding: 2rem;
                 border: 0;
